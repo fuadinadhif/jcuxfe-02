@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Case 1</title>
+    <style>
+      body {
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="change-color-btn">Change Background</button>
+
+    <script>
+      const body = document.getElementsByTagName("body");
+      const button = document.getElementById("change-color-btn");
+
+      button.addEventListener("click", function () {
+        body[0].style.backgroundColor = "greenyellow";
+      });
+    </script>
+  </body>
+</html>
