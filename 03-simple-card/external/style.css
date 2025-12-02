@@ -1,0 +1,44 @@
+body {
+  /* html color | hex code | rgb | hsv | hsl | hsb | oklch */
+  background-color: orange;
+}
+
+div {
+  /* px | cm | inch | % | vw | vh | ... */ 
+  width: fit-content;
+  height: fit-content;
+
+  background-color: white;
+  border: 2px solid black;
+  /* padding-top: 26px;
+        padding-bottom: 26px;
+        padding-left: 22px;
+        padding-right: 22px; */
+  padding: 26px 22px;
+  margin: 48px;
+  font-family: monospace;
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#testimonial {
+  width: 200px;
+}
+
+#name {
+  font-weight: 900;
+  font-size: 32px;
+  margin: 0;
+}
+
+#position {
+  color: grey;
+}

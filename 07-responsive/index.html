@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive</title>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* device width >= 769px */
+        gap: 12px;
+      }
+
+      div {
+        background-color: hotpink;
+        height: 200px;
+      }
+
+      @media (max-width: 768px) {
+        main {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        div {
+          background-color: brown;
+        }
+      }
+
+      @media (max-width: 480px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+
+        div {
+          background-color: skyblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </main>
+  </body>
+</html>

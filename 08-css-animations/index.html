@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations</title>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+      }
+
+      #color-fade {
+        background-color: yellow;
+        border-radius: 50%;
+        /* animation: colorFade 2s infinite; */
+        animation-name: colorFade;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes colorFade {
+        0% {
+          background-color: yellow;
+        }
+        25% {
+          background-color: orange;
+        }
+        50% {
+          background-color: orangered;
+        }
+        75% {
+          background-color: orange;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+
+      #slide-right-left {
+        background-color: greenyellow;
+        margin-top: 12px;
+        animation: slideRightLeft 3s infinite;
+      }
+
+      @keyframes slideRightLeft {
+        0% {
+          transform: translateX(200%);
+          background-color: greenyellow;
+        }
+        50% {
+          transform: translateX(0%);
+          background-color: green;
+        }
+        100% {
+          transform: translateX(200%);
+          background-color: greenyellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="color-fade"></div>
+    <div id="slide-right-left"></div>
+  </body>
+</html>
