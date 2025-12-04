@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple PPh Calculator</title>
+  </head>
+  <body>
+    <h1>Simple PPh Calculator</h1>
+
+    <div>
+      <label for="annualIncome">Annual Income:</label>
+      <input id="annualIncome" type="number" />
+
+      <label for="deduction">Deduction:</label>
+      <input id="deduction" type="number" />
+
+      <button id="calc">Calculate</button>
+    </div>
+
+    <p>Total Tax: Rp.<span id="totalTax">-</span></p>
+
+    <script>
+      /*
+        Simple fixed 3-bracket PPh
+        0 - 50 jt -> 5%
+        50 - 250 jt -> 15%
+        250 jt+ -> 25%
+      */
+
+      function calculatePPh(income) {
+        let tax = 0;
+
+        // bracket 1
+        const b1Max = 50_000_000;
+        if (income > 0) {
+          let b1 = income;
+
+          if (b1 > b1Max) {
+            b1 = b1Max;
+          }
+
+          tax = tax + b1 * 0.05;
+        }
+
+        // bracket 2
+        const b2Max = 250_000_000;
+        if (income > b1Max) {
+          let b2 = income - b1Max;
+
+          if (b2 > b2Max - b1Max) {
+            b2 = b2Max - b1Max;
+          }
+
+          tax = tax + b2 * 0.15;
+        }
+
+        // bracket 3
+        if (income > b2Max) {
+          let b3 = (income = b2Max);
+          tax = tax + b3 * 0.25;
+        }
+
+        return tax;
+      }
+
+      const calcBtn = document.getElementById("calc");
+      calcBtn.addEventListener("click", function () {
+        let incomeValue = document.getElementById("annualIncome").value;
+        let deductionValue = document.getElementById("deduction").value;
+
+        if (!incomeValue) {
+          incomeValue = 0;
+        }
+        if (!deductionValue) {
+          deductionValue = 0;
+        }
+
+        const taxable = incomeValue - deductionValue;
+        if (taxable < 0) taxable = 0;
+        const tax = calculatePPh(taxable);
+
+        const totalTax = document.getElementById("totalTax");
+        totalTax.textContent = tax;
+      });
+    </script>
+  </body>
+</html>

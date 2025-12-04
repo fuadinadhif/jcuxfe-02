@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matching Game</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: monospace;
+        margin-top: 60px;
+      }
+
+      button {
+        font-size: 40px;
+        padding: 6px;
+        margin: 6px;
+      }
+
+      #target {
+        font-size: 75px;
+      }
+
+      p {
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Matching The Emoji!</h1> -->
+
+    <div id="target">?</div>
+    <p>Score: <span id="score">0</span></p>
+
+    <button id="start">Start</button>
+
+    <div>
+      <button id="btn1">💥</button>
+      <button id="btn2">🎅🏼</button>
+      <button id="btn3">🚚</button>
+    </div>
+
+    <script>
+      let score = 0;
+      let currentEmoji = "?";
+
+      const targetElement = document.getElementById("target");
+      const scoreElement = document.getElementById("score");
+      const startBtn = document.getElementById("start");
+      const btn1 = document.getElementById("btn1");
+      const btn2 = document.getElementById("btn2");
+      const btn3 = document.getElementById("btn3");
+
+      function pickRandomEmoji() {
+        const randomNumber = Math.ceil(Math.random() * 3);
+
+        if (randomNumber === 1) {
+          currentEmoji = "💥";
+        } else if (randomNumber === 2) {
+          currentEmoji = "🎅🏼";
+        } else {
+          currentEmoji = "🚚";
+        }
+
+        return currentEmoji;
+      }
+
+      function match(emojiPicked) {
+        if (emojiPicked === currentEmoji) {
+          score = score + 1;
+        } else {
+          score = score - 1;
+        }
+
+        scoreElement.textContent = score;
+        targetElement.textContent = pickRandomEmoji();
+      }
+
+      startBtn.addEventListener("click", () => {
+        scoreElement.textContent = 0;
+        targetElement.textContent = pickRandomEmoji();
+      });
+
+      btn1.addEventListener("click", () => match("💥"));
+      btn2.addEventListener("click", () => match("🎅🏼"));
+      btn3.addEventListener("click", () => match("🚚"));
+    </script>
+  </body>
+</html>
