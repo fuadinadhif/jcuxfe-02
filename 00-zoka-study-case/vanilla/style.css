@@ -1,0 +1,173 @@
+/* --------------------------------- General -------------------------------- */
+body {
+  font-family: Poppins;
+}
+
+.container {
+  max-width: 1180px;
+  margin: auto;
+}
+
+/* --------------------------------- Header --------------------------------- */
+#logo {
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -0.25rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+#youtube-btn {
+  font-weight: 600px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 2px solid #3f41a6;
+  border-radius: 22.5px;
+  padding: 15px 21px;
+}
+
+/* ------------------------------ Hero section ------------------------------ */
+#hero-section {
+  display: flex;
+  gap: 62px;
+  margin-top: 160px;
+}
+
+/* RIGHT */
+#right {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 450px 300px;
+  gap: 20px;
+}
+
+#right img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+#right img:first-child {
+  grid-column: span 2;
+}
+
+/* LEFT */
+#left {
+  max-width: 438px;
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+#left h2 {
+  color: #1a093c;
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+}
+
+#left p {
+  color: rgba(26, 9, 60, 0.8);
+  font-size: 18px;
+  max-width: 275px;
+}
+
+#left a {
+  background-color: #3f41a6;
+  color: white;
+  padding: 25px 52px;
+  border-radius: 50px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: fit-content;
+}
+
+#left a div {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(249, 249, 252, 0.35);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+/* -------------------------- Why choose us section ------------------------- */
+#why-choose-us-section {
+  margin-top: 100px;
+  padding: 120px 0px;
+}
+
+#why-choose-us-section h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.25;
+  color: #1a093c;
+  margin-bottom: 80px;
+}
+
+.card-wrapper {
+  display: flex;
+  max-width: 1007px;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.card {
+  max-width: 267px;
+  text-align: center;
+}
+
+.circle-wrapper {
+  box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.15);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  margin: auto;
+}
+
+.circle-wrapper img {
+  height: 100px;
+}
+
+.card h3 {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+/* --------------------------------- Footer --------------------------------- */
+footer {
+  padding: 64px;
+}
