@@ -1,10 +1,11 @@
 import "./App.css";
 import Card from "./Card.jsx";
+import FloralCard from "./FloralCard.jsx";
 
 function App() {
   return (
     <div>
-      <header class="container">
+      <header className="container">
         <h1 id="logo">ZOKA</h1>
 
         <nav>
@@ -31,7 +32,7 @@ function App() {
       </header>
 
       <main>
-        <section id="hero-section" class="container">
+        <section id="hero-section" className="container">
           <div id="left">
             <h2>Where creative process happens</h2>
             <p>
@@ -52,14 +53,24 @@ function App() {
           </div>
         </section>
 
-        <section id="why-choose-us-section" class="container">
+        <section id="why-choose-us-section" className="container">
           <h2>Why Choose us</h2>
 
-          <div class="card-wrapper">
+          <div className="card-wrapper">
             <Card image="photo-gallery.svg" />
             <Card image="my-location.svg" />
             <Card image="camera.svg" />
           </div>
+        </section>
+
+        <section
+          id="floral-design"
+          className="container"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <FloralCard image="flower-1.png" order="01" />
+          <FloralCard image="flower-2.png" order="02" />
+          <FloralCard image="flower-3.png" order="03" />
         </section>
       </main>
 
